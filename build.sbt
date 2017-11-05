@@ -4,7 +4,7 @@ organization := "com.typesafe.sbt"
 
 name := "sbt-stylus"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.12.3"
 
 libraryDependencies ++= Seq(
   "com.typesafe" % "jstranspiler" % "1.0.0",
@@ -24,15 +24,16 @@ resolvers ++= Seq(
   Resolver.mavenLocal
 )
 
-addSbtPlugin("com.typesafe.sbt" %% "sbt-js-engine" % "1.1.1")
+addSbtPlugin("com.typesafe.sbt" %% "sbt-js-engine" % "1.2.2")
 
 publishMavenStyle := false
 
-publishTo := {
+/*publishTo := {
   if (isSnapshot.value) Some(Classpaths.sbtPluginSnapshots)
   else Some(Classpaths.sbtPluginReleases)
-}
+}*/
 
-scriptedSettings
+//scriptedSettings
 
-scriptedLaunchOpts <+= version apply { v => s"-Dproject.version=$v" }
+//scriptedLaunchOpts <+= version apply { v => s"-Dproject.version=$v" }
+scriptedLaunchOpts += s"-Dproject.version=${version.value}"

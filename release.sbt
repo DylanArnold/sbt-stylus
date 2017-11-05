@@ -2,9 +2,9 @@ import sbtrelease._
 import ReleaseStateTransformations._
 import ReleaseKeys._
 
-releaseSettings
+//releaseSettings
 
-tagName := (version in ThisBuild).value
+//tagName := (version in ThisBuild).value
 
 lazy val scriptedKey = taskKey[Unit]("scripted")
 
